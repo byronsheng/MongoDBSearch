@@ -85,11 +85,19 @@ start with $search
   "embeddedDocument":
   {
     "path": "yourSubObject",
-    "operator" : "embeddedDocument" : {
-      "path" : "yourSubObject.yourSub-SubObject",
-      "operator": "autocomplete" : {
-        "path": "yourSubObject.yoursub-SubObject.sub-SubProperty1",
-        "query": "testQueryString"
+    "operator" :
+    {
+      "embeddedDocument" :
+      {
+        "path" : "yourSubObject.yourSub-SubObject",
+        "operator":
+        {
+          "autocomplete" :
+          {
+            "path": "yourSubObject.yoursub-SubObject.sub-SubProperty1",
+            "query": "testQueryString"
+          }
+        }
       }
     }
   }
